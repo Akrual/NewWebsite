@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bunx --bun astro dev",
     "start": "bunx --bun astro dev",
-    "lint": "bunx biome check --apply --no-errors-on-unmatched --files-ignore-unknown=true ./src && npx eslint ./src --fix -c ./.eslintrc.json",
+    "lint": "bunx biome check --write --no-errors-on-unmatched --files-ignore-unknown=true .",
     "build": "bunx --bun astro check && bunx --bun astro build && node process-html.mjs",
     "preview": "bunx --bun astro preview",
     "astro": "bunx --bun astro"
