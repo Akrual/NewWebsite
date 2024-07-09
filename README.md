@@ -612,13 +612,6 @@ Interactive components like navbars, modals, and accordions are built using [Pre
 
 Styling across our project leverages the utility-first classes offered by [Tailwind CSS](https://tailwindcss.com). This methodology allows us to create custom layouts and components with speed and efficiency.
 
-To ensure consistent code formatting, particularly for class sorting, we have integrated the `prettier-plugin-tailwindcss` [plugin](https://github.com/tailwindlabs/prettier-plugin-tailwindcss). The following configuration is set in the `.prettierrc` file at the root of the project:
-
-```json
-{
-  "plugins": ["prettier-plugin-tailwindcss"]
-}
-```
 
 ### Deployment and Security
 

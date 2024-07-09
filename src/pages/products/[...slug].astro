@@ -1,25 +1,25 @@
 ---
-// Import section components
-import MainLayout from "@/layouts/MainLayout.astro";
-import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
-import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
+// Import section components
+import MainLayout from "@/layouts/MainLayout.astro";
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
+import ProductTabBtn from "@components/ui/buttons/ProductTabBtn.astro";
 import { SITE } from "@data/constants";
 
 // Global declaration for gsap animation library
 declare global {
-  interface Window {
-    gsap: any;
-  }
+	interface Window {
+		gsap: any;
+	}
 }
 // This gets the static paths for all the unique products
 export async function getStaticPaths() {
-  const productEntries = await getCollection("products");
-  return productEntries.map((product) => ({
-    params: { slug: product.slug },
-    props: { product },
-  }));
+	const productEntries = await getCollection("products");
+	return productEntries.map((product) => ({
+		params: { slug: product.slug },
+		props: { product },
+	}));
 }
 
 const { product } = Astro.props;

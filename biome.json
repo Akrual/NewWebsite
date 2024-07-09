@@ -1,0 +1,166 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.1/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"correctness": {
+				"useHookAtTopLevel": "error",
+				"useJsxKeyInIterable": "error",
+				"useExhaustiveDependencies": "error",
+				"noUnsafeOptionalChaining": "error",
+				"noConstantCondition": "error",
+				"noEmptyPattern": "error",
+				"noInnerDeclarations": "error",
+				"noInvalidConstructorSuper": "error",
+				"noInvalidNewBuiltin": "error",
+				"noInvalidUseBeforeDeclaration": "error",
+				"noSelfAssign": "error",
+				"noSetterReturn": "error",
+				"noUndeclaredVariables": "error",
+				"noUnreachable": "warn",
+				"noUnnecessaryContinue": "warn",
+				"noUnreachableSuper": "error",
+				"noUnsafeFinally": "error",
+				"noVoidTypeReturn": "error",
+				"noVoidElementsWithChildren": "error",
+				"noConstAssign": "error"
+			},
+			"style": {
+				"noNegationElse": "error",
+				"useBlockStatements": "error",
+				"useConsistentArrayType": "error",
+				"useForOf": "error",
+				"useFragmentSyntax": "error",
+				"useShorthandArrayType": "error",
+				"useShorthandAssign": "error",
+				"noNonNullAssertion": "off",
+				"useSingleCaseStatement": "error",
+				"noParameterAssign": "error",
+				"noVar": "error",
+				"useAsConstAssertion": "error",
+				"useCollapsedElseIf": "error",
+				"useConst": "error",
+				"useEnumInitializers": "error",
+				"useExportType": "error",
+				"useImportType": "error",
+				"useSelfClosingElements": "error",
+				"useShorthandFunctionType": "error",
+				"useSingleVarDeclarator": "error"
+			},
+			"suspicious": {
+				"useAwait": "error",
+				"noExplicitAny": "off",
+				"noArrayIndexKey": "warn",
+				"noSuspiciousSemicolonInJsx": "error",
+				"noDuplicateTestHooks": "error",
+				"noCatchAssign": "error",
+				"noClassAssign": "error",
+				"noDoubleEquals": "error",
+				"noFunctionAssign": "error",
+				"noDuplicateCase": "error",
+				"noDuplicateClassMembers": "error",
+				"noDuplicateJsxProps": "error",
+				"noDuplicateObjectKeys": "error",
+				"noDuplicateParameters": "error",
+				"noFallthroughSwitchClause": "error",
+				"noGlobalAssign": "error",
+				"noImplicitAnyLet": "error",
+				"noImportAssign": "error",
+				"noMisrefactoredShorthandAssign": "error",
+				"noMisleadingInstantiator": "error",
+				"noRedeclare": "error",
+				"noRedundantUseStrict": "error",
+				"noSelfCompare": "error",
+				"noThenProperty": "error",
+				"useDefaultSwitchClauseLast": "error",
+				"useGetterReturn": "error",
+				"useValidTypeof": "error"
+			},
+			"nursery": {
+				"noDuplicateJsonKeys": "error",
+				"useSortedClasses": "off",
+				"noRestrictedImports": {
+					"level": "error",
+					"options": {
+						"paths": {
+							"@/features/models": "Please use specific feature instead.",
+							"lodash": "Using lodash is not encouraged",
+							"underscore": "Using underscore is not encouraged",
+							"moment": "Using moment is not encouraged",
+							"antd": "Please use specific Component Instead.",
+							"@reatom/url": "Please use @/features/models/urlAtom."
+						}
+					}
+				},
+				"useDefaultSwitchClause": "error",
+				"noDoneCallback": "error",
+				"noDuplicateElseIf": "error"
+			},
+			"complexity": {
+				"noUselessTernary": "error",
+				"noExcessiveCognitiveComplexity": "error",
+				"noExtraBooleanCast": "error",
+				"noForEach": "error",
+				"noUselessCatch": "error",
+				"noUselessConstructor": "error",
+				"noUselessFragments": "error",
+				"noUselessLabel": "error",
+				"noUselessLoneBlockStatements": "error",
+				"noUselessRename": "error",
+				"noUselessSwitchCase": "error",
+				"useArrowFunction": "error",
+				"useFlatMap": "error",
+				"useOptionalChain": "error",
+				"useSimplifiedLogicExpression": "error"
+			}
+		}
+	},
+	"formatter": {
+		"formatWithErrors": true,
+		"indentStyle": "space",
+		"lineEnding": "lf",
+		"enabled": true,
+		"attributePosition": "multiline"
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double",
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "asNeeded",
+			"trailingComma": "all",
+			"semicolons": "always",
+			"arrowParentheses": "always",
+			"enabled": true,
+			"attributePosition": "multiline",
+			"bracketSpacing": true,
+			"lineEnding": "lf",
+			"bracketSameLine": true
+		}
+	},
+	"json": {
+		"formatter": {
+			"enabled": true,
+			"lineEnding": "lf",
+			"trailingCommas": "none"
+		},
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": true
+		}
+	},
+	"vcs": {
+		"clientKind": "git",
+		"defaultBranch": "master",
+		"enabled": true,
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignore": [
+			"**/*.astro"
+		]
+	}
+}

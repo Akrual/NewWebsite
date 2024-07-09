@@ -1,0 +1,46 @@
+{
+	"recommendations": [
+		"ghmcadams.lintlens",
+		// my extensions, ofc :P
+		"antfu.browse-lite",
+		"antfu.iconify",
+		"antfu.slidev",
+		"antfu.unocss",
+		"antfu.vite",
+		"antfu.where-am-i",
+		"lokalise.i18n-ally",
+		// themes & icons
+		"antfu.icons-carbon",
+		"file-icons.file-icons",
+		"sainnhe.gruvbox-material",
+		// life savers!
+		"usernamehw.errorlens",
+		"eamodio.gitlens",
+		"donjayamanne.githistory",
+		"GitHub.vscode-pull-request-github",
+		"mhutchie.git-graph",
+		"mpontus.tab-cycle",
+		"naumovs.color-highlight",
+		"richie5um2.vscode-sort-json",
+		"unional.vscode-sort-package-json",
+		"steoates.autoimport",
+		"NuclleaR.vscode-extension-auto-import",
+		"clinyong.vscode-css-modules",
+		"ypresto.vscode-intelli-refactor",
+		"VisualStudioExptTeam.vscodeintellicode",
+		"quicktype.quicktype",
+		"rbbit.typescript-hero",
+		"pflannery.vscode-versionlens",
+		"ZixuanChen.vitest-explorer",
+		"planbcoding.vscode-react-refactor",
+		"ryanluker.vscode-coverage-gutters",
+		"GitHub.copilot-chat",
+		"biomejs.biome",
+		"simonhe.unot",
+		"funkyremi.vscode-google-translate",
+		"joao-mbn.react-extract",
+		"Huuums.vscode-fast-folder-structure",
+		"yoavbls.pretty-ts-errors",
+		"astro-build.astro-vscode"
+	]
+}
