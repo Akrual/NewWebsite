@@ -1,8 +1,8 @@
 ---
 import { getImage } from "astro:assets";
 import { OG, SEO, SITE } from "@data/constants";
-import faviconSvgSrc from "@images/icon.svg";
 import faviconSrc from "@images/icon.png";
+import faviconSvgSrc from "@images/icon.svg";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -35,8 +35,8 @@ const socialImageRes = await getImage({
 const socialImage = Astro.url.origin + socialImageRes.src; // Get the full URL of the image (https://stackoverflow.com/a/9858694)
 
 const languages: { [key: string]: string } = {
-  en: "",
-  fr: "fr",
+  "pt-BR": "",
+  en: "en",
 };
 
 function createHref(lang: string, prefix: string, path: string): string {
@@ -52,7 +52,7 @@ const fullPath: string = Astro.url.pathname;
 const alternateLanguageLinks: string = Object.entries(languages)
   .map(([lang, prefix]: [string, string]) => {
     const basePath: string =
-      lang === "en" ? fullPath.replace(/^\/fr\//, "/") : fullPath;
+      lang === "pt-BR" ? fullPath.replace(/^\/en\//, "/") : fullPath;
 
     const href: string = createHref(lang, prefix, basePath);
 
@@ -96,7 +96,7 @@ const appleTouchIcon = await getImage({
 <Fragment set:html={alternateLanguageLinks} />
 
 <!-- Facebook Meta Tags -->
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="pt_BR" />
 <meta property="og:url" content={URL} />
 <meta property="og:type" content="website" />
 <meta property="og:title" content={ogTitle} />

@@ -33,7 +33,7 @@ import Icon from "./icons/Icon.astro";
       Object.entries(languages).map(([lang, label]) => (
         <a
           class="flex items-center gap-x-3.5 rounded-lg px-3 py-2 text-sm text-neutral-800 hover:bg-neutral-100 focus:bg-neutral-100 focus:outline-none dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
-          href={`/${lang === "en" ? "" : lang}`}
+          href={`/${lang === "pt-BR" ? "" : lang}`}
         >
           {label}
         </a>
@@ -50,9 +50,9 @@ import Icon from "./icons/Icon.astro";
 
 <script>
   // Type alias for supported languages
-  type TLanguage = "en" | "fr";
+  type TLanguage = "pt-BR" | "en";
   // array of supported languages
-  const languages: TLanguage[] = ["en", "fr"];
+  const languages: TLanguage[] = ["pt-BR", "en"];
 
   document.addEventListener("DOMContentLoaded", function () {
     const languageLinks = document.querySelectorAll(".hs-dropdown-menu a");
@@ -78,15 +78,15 @@ import Icon from "./icons/Icon.astro";
           url.pathname.includes("/post") ||
           url.pathname.includes("/insight")
         ) {
-          if (url.pathname.includes("en")) {
+          if (url.pathname.includes("br")) {
             pathParts.unshift(lang);
             pathParts.splice(2, 0, lang);
           } else {
             pathParts.unshift(lang);
-            pathParts.splice(2, 0, "en");
+            pathParts.splice(2, 0, "br");
           }
         } else {
-          if (lang !== "en") {
+          if (lang !== "pt-BR") {
             pathParts.unshift(lang);
           }
         }

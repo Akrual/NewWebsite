@@ -1,17 +1,17 @@
 ---
+import frStrings from "@/utils/en/navigation";
+import BrandLogo from "@components/BrandLogo.astro";
 //Import relevant dependencies
 import ThemeIcon from "@components/ThemeIcon.astro";
-import NavLink from "@components/ui/links/NavLink.astro";
-import MegaMenuLink from "@components/ui/links/MegaMenuLink.astro";
-import Authentication from "../misc/Authentication.astro";
-import enStrings from "@utils/navigation.ts";
-import frStrings from "@utils/fr/navigation.ts";
-import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
+import MegaMenuLink from "@components/ui/links/MegaMenuLink.astro";
+import NavLink from "@components/ui/links/NavLink.astro";
+import enStrings from "@utils/navigation.ts";
+import Authentication from "../misc/Authentication.astro";
 
 // Select the correct translation based on the page's lang prop:
-const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
-const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
+const strings = Astro.currentLocale === "en" ? frStrings : enStrings;
+const homeUrl = Astro.currentLocale === "en" ? "/en" : "/";
 ---
 
 <!-- Main header component -->
@@ -151,7 +151,7 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
 
       if (dispatchEvent) {
         window.dispatchEvent(
-          new CustomEvent("on-hs-appearance-change", { detail: theme })
+          new CustomEvent("on-hs-appearance-change", { detail: theme }),
         );
       }
     },
@@ -181,10 +181,10 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
 
   window.addEventListener("load", () => {
     const $clickableThemes = document.querySelectorAll(
-      "[data-hs-theme-click-value]"
+      "[data-hs-theme-click-value]",
     );
     const $switchableThemes = document.querySelectorAll(
-      "[data-hs-theme-switch]"
+      "[data-hs-theme-switch]",
     );
 
     $clickableThemes.forEach(($item) => {
@@ -192,8 +192,8 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
         HSThemeAppearance.setAppearance(
           $item.getAttribute("data-hs-theme-click-value"),
           true,
-          $item
-        )
+          $item,
+        ),
       );
     });
 

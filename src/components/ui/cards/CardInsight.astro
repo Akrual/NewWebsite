@@ -1,12 +1,12 @@
 ---
 // Import necessary modules and utilities
 import { Image } from "astro:assets";
-import Icon from "@components/ui/icons/Icon.astro";
 import type { CollectionEntry } from "astro:content";
+import Icon from "@components/ui/icons/Icon.astro";
 
 const {
   insightEntry,
-  label = Astro.currentLocale === "fr" ? "Lire plus" : "Read more",
+  label = Astro.currentLocale === "en" ? "Lire plus" : "Read more",
 } = Astro.props;
 
 interface Props {
