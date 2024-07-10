@@ -30,7 +30,7 @@ const blogPosts: CollectionEntry<"blog">[] = await getCollection(
   "blog",
   ({ id }) => {
     return id.startsWith("en/");
-  }
+  },
 );
 
 // Filter out the current post to get related posts
@@ -38,10 +38,12 @@ const blogPosts: CollectionEntry<"blog">[] = await getCollection(
 // In a production site, you might want to implement a more robust algorithm, choosing related posts based on tags, categories, dates, authors, or keywords.
 // See example: https://blog.codybrunner.com/2024/adding-related-articles-with-astro-content-collections/
 const relatedPosts: CollectionEntry<"blog">[] = blogPosts.filter(
-  (blogEntry) => blogEntry.slug !== post.slug
+  (blogEntry) => blogEntry.slug !== post.slug,
 );
 
 const pageTitle: string = `${post.data.title} | ${SITE.title}`;
+
+const { Content } = await post.render();
 ---
 
 <MainLayout title={pageTitle}>
@@ -54,10 +56,8 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
             <div class="flex items-center justify-between gap-x-2">
               <div>
                 <!--Post metadata and author info-->
-                <span
-                    class="font-bold text-neutral-700 dark:text-neutral-300"
-                >
-                    {post.data.author}
+                <span class="font-bold text-neutral-700 dark:text-neutral-300">
+                  {post.data.author}
                 </span>
                 <ul class="text-xs text-neutral-500">
                   <li
@@ -84,28 +84,7 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
       </h2>
       <!--Blog post contents-->
       <div class="mb-5 space-y-5 md:mb-8 md:space-y-8">
-        {
-          post.data.contents.map((content: string, index: any) =>
-            index === 1 ? (
-              <>
-                <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                  {content}
-                </p>
-                <Image
-                  class="w-full rounded-xl object-cover"
-                  src={post.data.cardImage}
-                  alt={post.data.cardImageAlt}
-                  draggable={"false"}
-                  format={"avif"}
-                />
-              </>
-            ) : (
-              <p class="text-pretty text-lg text-neutral-700 dark:text-neutral-300">
-                {content}
-              </p>
-            )
-          )
-        }
+        <Content />
       </div>
       <div
         class="mx-auto grid max-w-screen-lg gap-y-5 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
